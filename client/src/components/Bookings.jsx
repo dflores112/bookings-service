@@ -78,7 +78,6 @@ class Bookings extends React.Component {
       confirmationModalOpen: false,
       calendarModalOpen: false,
       summaryModalOpen: false,
-      stuck: false
     };
   }
 
