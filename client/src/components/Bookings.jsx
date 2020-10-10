@@ -63,7 +63,7 @@ class Bookings extends React.Component {
     super();
     this.state = {
       partySize: 2,
-      restaurantId: Math.floor(Math.random() * 100),
+      restaurantId: 1,
       restaurantName: '',
       reservationDate: (new Date()).toLocaleDateString(),
       reservationTime: '7:00 PM',
@@ -76,16 +76,20 @@ class Bookings extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/bookings/restaurantName/${this.state.restaurantId}`, {
-      params: {
-        restaurantId: this.state.restaurantId
-      }
-    })
-      .then(response => {
-        this.setState({
-          restaurantName: response.data[0].name
+    this.setState({
+      restaurantId: window.location.href.split('/')[3]
+    }, () => {
+      axios.get(`/api/bookings/restaurantName/${this.state.restaurantId}`, {
+        params: {
+          restaurantId: this.state.restaurantId
+        }
+      })
+        .then(response => {
+          this.setState({
+            restaurantName: response.data[0].name
+          });
         });
-      });
+    });
   }
 
   handlePartySize(partySize) {

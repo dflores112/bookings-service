@@ -19,5 +19,3 @@ create table reservations (
   contactInfo varchar(255) not null,
   occasion varchar(255) null
 );
-
--- mysql -u root -p < database/schema.sql
