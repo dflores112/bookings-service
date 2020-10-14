@@ -64,7 +64,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
       "lastName": "String",
       "email": "String",
       "time": "String",
-      "seating": "String"
+      "seatingPreference": "String"
     }
 ```
 
