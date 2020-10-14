@@ -30,7 +30,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 ## Server API
 
 ### Get restaurant info
-  * GET `/api/restaurants/:id`
+  * GET `/api/bookings/restaurantName/:restaurantId`
 
 **Path Parameters:**
   * `id` restaurant id
@@ -41,17 +41,15 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ```json
     {
-      "id": "Number",
+      "restaurantsId": "Number",
       "name": "String",
-      "address": "String",
-      "phone": "String",
-      "website": "String",
-      "cost": "Number"
+      "address":"String",
+      "capacity": "Number"
     }
 ```
 
-### Add restaurant
-  * POST `/api/restaurants`
+### Add reservation
+  * POST `/api/bookings/:restaurantId`
 
 **Success Status Code:** `201`
 
@@ -59,18 +57,20 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ```json
     {
+      "restarauntId": "Number",
       "name": "String",
-      "address": "String",
       "phone": "String",
-      "website": "String",
-      "googleMap": "String location",
-      "cost": "Number"
+      "firstName": "String",
+      "lastName": "String",
+      "email": "String",
+      "time": "String",
+      "seating": "String"
     }
 ```
 
 
-### Update restaurant info
-  * PATCH `/api/restaurant/:id`
+### Update reservation
+  * PUT `/api/bookings/:restaurantId`
 
 **Path Parameters:**
   * `id` restaurant id
@@ -80,46 +80,25 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 **Request Body**: Expects JSON with any of the following keys (include only keys to be updated)
 
 ```json
-    {
+   {
+     "restarauntId": "Number",
       "name": "String",
-      "address": "String",
       "phone": "String",
-      "website": "String",
-      "cost": "Number"
+      "firstName": "String",
+      "lastName": "String",
+      "email": "String",
+      "time": "String",
+      "seating": "String"
     }
 ```
 
-### Delete restaurant
-  * DELETE `/api/restaurant/:id`
+### Delete reservation
+  * DELETE `/api/bookings/:restaurantId`
 
 **Path Parameters:**
   * `id` restaurant id
 
 **Success Status Code:** `204`
-
-### Add image to restaurant
-  * POST `/api/restaurants/:restaurantId/images`
-
-**Path Parameters:**
-
-  * `restaurantId` restaurant id
-
-**Success Status Code:** `201`
-
-**Request Body**: Expects JSON with the following keys.
-
-```json
-    {
-      "user": "String",
-      "image": "image URL",
-      "description": "String",
-      "posted": "YYYY-MM-MM",
-      "googleMap": "String location",
-      "category": "String",
-      "restaurant": "id Number",
-      "cost": "Number"
-    }
-```
 
 ### Installing Dependencies
 
