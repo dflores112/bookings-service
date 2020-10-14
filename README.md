@@ -57,7 +57,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ```json
     {
-      "restarauntId": "Number",
+      "restaurantId": "Number",
       "name": "String",
       "phone": "String",
       "firstName": "String",
@@ -65,6 +65,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
       "email": "String",
       "time": "String",
       "seatingPreference": "String"
+      "partySize: "Number"
     }
 ```
 
@@ -81,14 +82,15 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ```json
    {
-     "restarauntId": "Number",
+      "restaurantId": "Number",
       "name": "String",
       "phone": "String",
       "firstName": "String",
       "lastName": "String",
       "email": "String",
       "time": "String",
-      "seating": "String"
+      "seatingPreference": "String"
+      "partySize: "Number"
     }
 ```
 
