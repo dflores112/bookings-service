@@ -50,11 +50,11 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 
 ### Add reservation
-  * POST `/api/:restaurantId/bookings/:date`
+  * POST `/api/restaraunt/:restaurantId/`
 
 **Path Parameters:**
   * `restarauntid` restaurant id
-  * `date` utf date
+  
   
 **Success Status Code:** `201`
 
@@ -76,11 +76,11 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 
 ### Update reservation
-  * PUT `/api/:restaurantId/bookings/:date`
+  * PUT `/api/restaraunt/:restaurantId/booking/:reservationid`
 
 **Path Parameters:**
   * `restarauntid` restaurant id
-  * `date` utf date
+   * `reservationId` reservation id
 
 **Success Status Code:** `204`
 
@@ -101,12 +101,11 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 ```
 
 ### Delete reservation
-  * DELETE `/api/:restaurantId/bookings/:date/cancel/:time`
+  * DELETE `/api/restaraunt/:restaurantId/booking/:reservationid`
 
 **Path Parameters:**
   * `restarauntId` restaurant id
-  * `date` utf date
-  * `time` time of cancellation
+  * `reservationId` reservation id
 **Success Status Code:** `204`
 
 ### Installing Dependencies
