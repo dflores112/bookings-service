@@ -52,6 +52,10 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 ### Add reservation
   * POST `/api/:restaurantId/bookings/:date`
 
+**Path Parameters:**
+  * `restarauntid` restaurant id
+  * `date` utf date
+  
 **Success Status Code:** `201`
 
 **Request Body**: Expects JSON with the following keys.
