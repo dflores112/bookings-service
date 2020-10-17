@@ -33,7 +33,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
   * GET `/api/restaraunt/:restaurantId`
 
 **Path Parameters:**
-  * `id` restaurant id
+  * `restarauntid` restaurant id
 
 **Success Status Code:** `200`
 
@@ -46,6 +46,28 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
       "restaraunt_address":"String",
       "food_type": "String"
     }
+```
+
+### Get restaurant reservation info
+  * GET `/api/:restaurantId/bookings/:date`
+
+**Path Parameters:**
+  * `restarauntid` restaurant id
+   * `date` utf date
+  
+
+**Success Status Code:** `200`
+
+**Returns:** JSON
+
+```json
+  [
+   String (available date),
+   String (available date),
+   String (available date),
+   String (available date),
+   String (available date)
+  ]
 ```
 
 ### Add reservation
