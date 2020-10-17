@@ -30,7 +30,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 ## Server API
 
 ### Get restaurant info
-  * GET `/api/bookings/restaurantName/:restaurantId`
+  * GET `/api/restaraunt/:restaurantId`
 
 **Path Parameters:**
   * `id` restaurant id
@@ -41,15 +41,15 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ```json
     {
-      "restaurantsId": "Number",
-      "name": "String",
-      "address":"String",
-      "capacity": "Number"
+      "restaraunt_id": "Number",
+      "restaraunt_name": "String",
+      "restaraunt_address":"String",
+      "food_type": "String"
     }
 ```
 
 ### Add reservation
-  * POST `/api/bookings/:restaurantId`
+  * POST `/api/:restaurantId/bookings/:date`
 
 **Success Status Code:** `201`
 
@@ -57,24 +57,25 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ```json
     {
-      "restaurantId": "Number",
+      "restaurant_id": "Number",
+      "date": "String",
       "name": "String",
-      "phone": "String",
-      "firstName": "String",
-      "lastName": "String",
+      "phone_number": "String",
+      "first_name": "String",
+      "last_name": "String",
       "email": "String",
       "time": "String",
-      "seatingPreference": "String"
-      "partySize: "Number"
+      "party_size: "Number"
     }
 ```
 
 
 ### Update reservation
-  * PUT `/api/bookings/:restaurantId`
+  * PUT `/api/:restaurantId/bookings/:date`
 
 **Path Parameters:**
   * `id` restaurant id
+    * `date` utf date
 
 **Success Status Code:** `204`
 
@@ -82,24 +83,24 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ```json
    {
-      "restaurantId": "Number",
+       "restaurantId": "Number",
       "name": "String",
-      "phone": "String",
-      "firstName": "String",
-      "lastName": "String",
+      "phone_number": "String",
+      "first_name": "String",
+      "last_name": "String",
       "email": "String",
       "time": "String",
-      "seatingPreference": "String"
-      "partySize: "Number"
+      "party_size: "Number"
     }
 ```
 
 ### Delete reservation
-  * DELETE `/api/bookings/:restaurantId`
+  * DELETE `/api/:restaurantId/bookings/:date/cancel/:time`
 
 **Path Parameters:**
   * `id` restaurant id
-
+  * `date` utf date
+  * `time` time of cancellation
 **Success Status Code:** `204`
 
 ### Installing Dependencies
