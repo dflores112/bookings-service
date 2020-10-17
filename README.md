@@ -48,27 +48,6 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
     }
 ```
 
-### Get restaurant reservation info
-  * GET `/api/:restaurantId/bookings/:date`
-
-**Path Parameters:**
-  * `restarauntid` restaurant id
-   * `date` utf date
-  
-
-**Success Status Code:** `200`
-
-**Returns:** JSON
-
-```json
-  [
-   String (available date),
-   String (available date),
-   String (available date),
-   String (available date),
-   String (available date)
-  ]
-```
 
 ### Add reservation
   * POST `/api/:restaurantId/bookings/:date`
@@ -79,15 +58,14 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ```json
     {
-      "restaurant_id": "Number",
+      "restaraunt_id": "Number",
       "restaraunt_name": "String",
       "date": "String",
-      "name": "String",
+      "time": "String",
       "phone_number": "String",
       "first_name": "String",
       "last_name": "String",
       "email": "String",
-      "time": "String",
       "party_size: "Number"
     }
 ```
@@ -97,8 +75,8 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
   * PUT `/api/:restaurantId/bookings/:date`
 
 **Path Parameters:**
-  * `id` restaurant id
-    * `date` utf date
+  * `restarauntid` restaurant id
+  * `date` utf date
 
 **Success Status Code:** `204`
 
@@ -106,15 +84,14 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ```json
    {
-      "restaurant_id": "Number",
+      "restaraunt_id": "Number",
       "restaraunt_name": "String",
       "date": "String",
-      "name": "String",
+      "time": "String",
       "phone_number": "String",
       "first_name": "String",
       "last_name": "String",
       "email": "String",
-      "time": "String",
       "party_size: "Number"
     }
 ```
@@ -123,7 +100,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
   * DELETE `/api/:restaurantId/bookings/:date/cancel/:time`
 
 **Path Parameters:**
-  * `id` restaurant id
+  * `restarauntId` restaurant id
   * `date` utf date
   * `time` time of cancellation
 **Success Status Code:** `204`
@@ -136,6 +113,3 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
-
-
-
