@@ -30,7 +30,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 ## Server API
 
 ### Get restaurant info
-  * GET `/api/restaraunt/:restaurantId`
+  * GET `/api/restaraunt/:restaurantId/bookings`
 
 **Path Parameters:**
   * `restarauntid` restaurant id
@@ -50,7 +50,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 
 ### Add reservation
-  * POST `/api/restaraunt/:restaurantId/`
+  * POST `/api/restaraunt/:restaurantId/bookings`
 
 **Path Parameters:**
   * `restarauntid` restaurant id
