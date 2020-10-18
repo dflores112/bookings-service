@@ -27,5 +27,4 @@ CREATE TABLE users (
   email VARCHAR(20) NOT NULL,
   party_size SMALLINT NOT NULL
 )
-
 -- psql -u owner toptable < PosSchema.sql

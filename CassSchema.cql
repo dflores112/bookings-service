@@ -28,7 +28,6 @@ CREATE TABLE reservation_by_user (
   party_size int,
   PRIMARY KEY (user_id, date,reservation_id)
 )
-
 CREATE TABLE restaraunt (
   restaraunt_id int,
   restaraunt_name text,
@@ -36,7 +35,6 @@ CREATE TABLE restaraunt (
   food_type text,
   PRIMARY KEY (restaraunt_id)
 )
-
 CREATE TABLE user (
   user_id int,
   first_name text,
