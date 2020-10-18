@@ -27,6 +27,86 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 - etc
 
 ## Development
+## Server API
+
+### Get restaurant info
+  * GET `/api/restaraunt/:restaurantId/bookings`
+
+**Path Parameters:**
+  * `restarauntid` restaurant id
+
+**Success Status Code:** `200`
+
+**Returns:** JSON
+
+```json
+    {
+      "restaraunt_id": "Number",
+      "restaraunt_name": "String",
+      "restaraunt_address":"String",
+      "food_type": "String"
+    }
+```
+
+
+### Add reservation
+  * POST `/api/restaraunt/:restaurantId/bookings`
+
+**Path Parameters:**
+  * `restarauntid` restaurant id
+  
+  
+**Success Status Code:** `201`
+
+**Request Body**: Expects JSON with the following keys.
+
+```json
+    {
+      "restaraunt_id": "Number",
+      "restaraunt_name": "String",
+      "date": "String",
+      "time": "String",
+      "phone_number": "String",
+      "first_name": "String",
+      "last_name": "String",
+      "email": "String",
+      "party_size: "Number"
+    }
+```
+
+
+### Update reservation
+  * PUT `/api/restaraunt/:restaurantId/booking/:reservationid`
+
+**Path Parameters:**
+  * `restarauntid` restaurant id
+   * `reservationId` reservation id
+
+**Success Status Code:** `204`
+
+**Request Body**: Expects JSON with any of the following keys (include only keys to be updated)
+
+```json
+   {
+      "restaraunt_id": "Number",
+      "restaraunt_name": "String",
+      "date": "String",
+      "time": "String",
+      "phone_number": "String",
+      "first_name": "String",
+      "last_name": "String",
+      "email": "String",
+      "party_size: "Number"
+    }
+```
+
+### Delete reservation
+  * DELETE `/api/restaraunt/:restaurantId/booking/:reservationid`
+
+**Path Parameters:**
+  * `restarauntId` restaurant id
+  * `reservationId` reservation id
+**Success Status Code:** `204`
 
 ### Installing Dependencies
 
@@ -36,4 +116,3 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
-
