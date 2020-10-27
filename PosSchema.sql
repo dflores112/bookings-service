@@ -23,12 +23,10 @@ CREATE TABLE users (
 CREATE TABLE reservation_times (
   times_id SERIAL PRIMARY KEY,
   time_slot TIME,
-  booking_date DATE NOT NULL,
-  -- RENCES restaraun_id INT REFERENCES users(user_id)
+  booking_date DATE NOT NULL
 );
 
-COPY restaraunts (restaraunt_name, restaraunt_address, food_type) FROM '/home/ubuntu
-reservationInfo1.csv' DELIMITER ',' CSV HEADER;
+COPY restaraunts (restaraunt_name, restaraunt_address, food_type) FROM '/home/ubuntu/restaurantInfo1.csv' DELIMITER ',' CSV HEADER;
 COPY restaraunts (restaraunt_name, restaraunt_address, food_type) FROM '/home/ubuntu/restaurantInfo2.csv' DELIMITER ',' CSV HEADER;
 COPY restaraunts (restaraunt_name, restaraunt_address, food_type) FROM '/home/ubuntu/restaurantInfo3.csv' DELIMITER ',' CSV HEADER;
 COPY restaraunts (restaraunt_name, restaraunt_address, food_type) FROM '/home/ubuntu/restaurantInfo4.csv' DELIMITER ',' CSV HEADER;
