@@ -25,3 +25,7 @@ build/
 dist/
 
 config.js
+*.csv
+PosGresCred.js
+newrelic.js
+newrelic_agent.log

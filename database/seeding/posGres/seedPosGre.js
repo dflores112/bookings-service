@@ -26,7 +26,6 @@ const dataGen = async () => {
     writer.pipe(fs.createWriteStream('restaurantInfo6.csv'));
     for (let i = 0; i < 5000000; i++) {
       writer.write({
-        // restaraunt_id: i + 1,
         restaraunt_name: `${faker.name.firstName()}'s ${restaurantEnding[Math.floor(Math.random() * 25)]}`,
         restaraunt_address: faker.address.streetAddress(),
         food_type: foodType[Math.floor(Math.random() * 7)]
@@ -44,7 +43,6 @@ const dataGen2 = async () => {
     for (let i = 0; i < 5000000; i++) {
       let cap = faker.random.number({min:2, max: 12})
       writer2.write({
-        // user_id: i + 1,
         first_name: faker.name.firstName(),
         last_name: faker.name.lastName(),
         phone_number: faker.phone.phoneNumberFormat(),
@@ -60,14 +58,13 @@ const dataGen2 = async () => {
 
 const dataGen3 = async () => {
   const createReservationTable = async () => {
-    writer3.pipe(fs.createWriteStream('reservationInfo21.csv'));
-    for (let i = 0; i < 500000; i++) {
+    writer3.pipe(fs.createWriteStream('reservationInfo17.csv'));
+    for (let i = 0; i < 1000000; i++) {
       writer3.write({
-        // times_id: i + 1,
         time_slot: `${timeHours[Math.floor(Math.random() * 12)]}:${timeMinutes[Math.floor(Math.random() * 4)]} ${dayNight[Math.floor(Math.random() * 2)]}`,
         booking_date: `${months[Math.floor(Math.random() * 6)]} ${days[Math.floor(Math.random() * 30)]}, ${year}`,
-        restaraunt_id: faker.random.number({min:1, max: 35000000}),
-        user_id: faker.random.number({min:1, max: 50000000}),
+        // restaraunt_id: faker.random.number({min:1, max: 35000000}),
+        // user_id: faker.random.number({min:1, max: 50000000}),
       });
     }
     writer.end();
@@ -75,6 +72,6 @@ const dataGen3 = async () => {
   }
   await createReservationTable();
 }
-dataGen();
-dataGen2();
+// dataGen();
+// dataGen2();
 dataGen3();

@@ -17,7 +17,7 @@ app.get('/:restaurantId', (req, res) => {
 });
 
 app.get('/api/bookings/restaurantName/:restaurantId', (req, res) => {
-  const restaurantId = req.query.restaurantId;
+  const restaurantId = req.params.restaurantId;
   db.getRestaurantName(restaurantId, (err, data) => {
     if (err) {
       res.status(400).send('could not get restaurant name');
