@@ -23,7 +23,8 @@ CREATE TABLE users (
 CREATE TABLE reservation_times (
   times_id SERIAL PRIMARY KEY,
   time_slot TIME,
-  booking_date DATE NOT NULL,RENCES restaraun_id INT REFERENCES users(user_id)
+  booking_date DATE NOT NULL,
+  -- RENCES restaraun_id INT REFERENCES users(user_id)
 );
 
 COPY restaraunts (restaraunt_name, restaraunt_address, food_type) FROM '/home/ubuntu
