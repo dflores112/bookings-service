@@ -3,9 +3,9 @@ import http from "k6/http";
 
 export const options = {
   stages: [
-    { duration: "1s", target: 100 },
-    { duration: "5s", target: 300 },
-    { duration: "32s", target: 700 },
+    { duration: "1s", target: 50 },
+    { duration: "15s", target: 250 },
+    { duration: "30s", target: 500 },
     { duration: "1m", target: 1000 },
   ],
   ext: {
@@ -19,9 +19,9 @@ export const options = {
 
 export default function main() {
   let response;
-  const restaurant = Math.floor(Math.random() * 30000000) + 25000000;
+  const restaurant = Math.floor(Math.random() * 30000000) + 1;
   response = http.get(
-    `http://localhost:3000/api/bookings/restaurantName/${restaurant}`
+    `http://3.134.89.82/api/bookings/restaurantName/${restaurant}`
   );
 
   sleep(.1)
